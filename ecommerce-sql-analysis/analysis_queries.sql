@@ -46,3 +46,17 @@ JOIN payments AS p                          -- joined table: has the payment amo
 WHERE o.order_purchase_timestamp IS NOT NULL
 GROUP BY order_month                        -- one row per month
 ORDER BY order_month ASC;                   -- oldest to newest
+
+-- Top 10 selling product categories by total revenue
+-- Joins order_items → products → category_translation for English category names
+
+SELECT
+    ct.product_category_name_english  AS category,
+    COUNT(oi.order_id)                AS total_orders,
+    ROUND(SUM(oi.price), 2)           AS total_revenue
+FROM order_items          AS oi
+JOIN products             AS p   ON oi.product_id            = p.product_id
+JOIN category_translation AS ct  ON p.product_category_name  = ct.product_category_name
+GROUP BY category
+ORDER BY total_revenue DESC
+LIMIT 10;
