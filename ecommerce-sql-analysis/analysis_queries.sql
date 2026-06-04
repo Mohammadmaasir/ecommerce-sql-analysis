@@ -60,3 +60,17 @@ JOIN category_translation AS ct  ON p.product_category_name  = ct.product_catego
 GROUP BY category
 ORDER BY total_revenue DESC
 LIMIT 10;
+
+-- Average delivery time in days
+-- DATEDIFF calculates the difference between delivery date and purchase date
+-- Only includes delivered orders with valid timestamps
+
+SELECT
+    ROUND(AVG(DATEDIFF(
+        o.order_delivered_customer_date,   -- date customer received the order
+        o.order_purchase_timestamp         -- date customer placed the order
+    )), 1) AS avg_delivery_days
+FROM orders AS o
+WHERE o.order_status = 'delivered'                        -- only completed orders
+  AND o.order_delivered_customer_date IS NOT NULL         -- exclude missing delivery dates
+  AND o.order_purchase_timestamp      IS NOT NULL;        -- exclude missing order dates
