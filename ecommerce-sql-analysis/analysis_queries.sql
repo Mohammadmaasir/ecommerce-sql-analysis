@@ -1,9 +1,14 @@
 use ecommerce_analysis;
 show tables;
+
+-- ================================================
+-- Query 1: Total customers
+-- ================================================
+
 select count(*) as total_customers from customers;
 
 -- ================================================
--- QUERY: Top 10 Cities by Number of Customers
+-- QUERY 2: Top 10 Cities by Number of Customers
 -- PURPOSE: Find which cities have the most customers
 -- TABLE USED: customers
 -- ================================================
@@ -16,7 +21,7 @@ ORDER BY total_customers DESC -- sort by highest count first
 LIMIT 10;                    -- show only top 10 cities
 
 -- ================================================
--- QUERY: Total Revenue from All Orders
+-- QUERY 3: Total Revenue from All Orders
 -- PURPOSE: Find how much total money was made
 -- TABLE USED: payments
 -- ================================================
@@ -26,16 +31,20 @@ FROM payments;                                        -- from the payments table
 
 describe payments;
 
--- popular payment types
+-- ================================================
+-- Query 4: popular payment types
+-- ================================================
 
 select payment_type, count(payment_type) as payment_method
 from payments
 group by payment_type
 order by payment_method desc;
 
--- Monthly revenue trend
+-- ================================================
+-- Query 5: Monthly revenue trend
 -- Join orders (for date) with payments (for revenue amount)
 -- Group results by year-month and sort chronologically
+-- ================================================
 
 SELECT
     DATE_FORMAT(o.order_purchase_timestamp, '%Y-%m') AS order_month,  -- extract year-month
@@ -47,8 +56,10 @@ WHERE o.order_purchase_timestamp IS NOT NULL
 GROUP BY order_month                        -- one row per month
 ORDER BY order_month ASC;                   -- oldest to newest
 
--- Top 10 selling product categories by total revenue
+-- ================================================
+-- Query 6: Top 10 selling product categories by total revenue
 -- Joins order_items → products → category_translation for English category names
+-- ================================================
 
 SELECT
     ct.product_category_name_english  AS category,
@@ -61,9 +72,11 @@ GROUP BY category
 ORDER BY total_revenue DESC
 LIMIT 10;
 
--- Average delivery time in days
+-- ================================================
+-- Query 7: Average delivery time in days
 -- DATEDIFF calculates the difference between delivery date and purchase date
 -- Only includes delivered orders with valid timestamps
+-- ================================================
 
 SELECT
     ROUND(AVG(DATEDIFF(
@@ -74,3 +87,56 @@ FROM orders AS o
 WHERE o.order_status = 'delivered'                        -- only completed orders
   AND o.order_delivered_customer_date IS NOT NULL         -- exclude missing delivery dates
   AND o.order_purchase_timestamp      IS NOT NULL;        -- exclude missing order dates
+  
+-- ================================================
+-- Query 8: Top 10 sellers by total revenue
+-- Joins order_items → payments to calculate revenue per seller
+-- ================================================
+
+select
+oi.seller_id,
+count(distinct oi.order_id) as total_orders,
+round(sum(p.payment_value),2) as total_revenue
+from order_items as oi
+join payments as p on oi.order_id=p.order_id
+group by seller_id
+order by total_revenue desc
+limit 10;
+
+-- ================================================
+-- Query 9: Customer review score distribution
+-- Shows how many reviews were given for each score (1 to 5)
+-- ================================================
+
+select
+review_score, 
+count(*) as total_reviews,
+round(count(*) * 100.0/sum(count(*))
+over (),1)
+from reviews
+group by review_score
+order by review_score asc;
+
+-- ================================================
+-- query 10: On-time vs late delivery rate
+-- Compares estimated delivery date with actual delivery date
+-- Only includes orders with status 'delivered' and valid date columns
+-- ================================================
+
+select
+case
+when o.order_delivered_customer_date <= o.order_estimated_delivery_date
+then 'on_time'
+else 'late'
+end as delivery_status,
+count(*) as total_orders,
+round(count(*)*100.0/sum(count(*))
+over(), 1) as percentage
+from orders as o
+where o.order_status = 'delivered'
+and o.order_delivered_customer_date is not null 
+and o.order_estimated_delivery_date is not null
+group by delivery_status;
+
+
+
