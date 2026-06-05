@@ -15,9 +15,9 @@ The dataset contains 100,000+ orders from 2016–2018 across 9 relational tables
 
 ## Dataset
 
-Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle 
-Tables: customers, orders, order_items, payments, reviews, products, sellers, geolocation, category_translation  
-Size: 99,441 customers, 100,000+ orders, 2016–2018
+**Source:** [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle  
+**Tables:** customers, orders, order_items, payments, reviews, products, sellers, geolocation, category_translation  
+**Size:** 99,441 customers, 100,000+ orders, 2016–2018
 
 ---
 
@@ -40,10 +40,10 @@ Size: 99,441 customers, 100,000+ orders, 2016–2018
 
 ## Business Insights
 
-- High-value vs high-volume: Health & beauty leads in revenue despite fewer orders than bed & bath — product price matters more than order count.
-- Black Friday effect: November 2017 shows a clear revenue spike, confirming seasonal demand patterns in Brazilian e-commerce.
-- Delivery and satisfaction link: 8.1% of orders were delivered late — likely the primary driver of 1-star reviews (11.5% of all reviews).
-- Seller concentration: The top seller generated nearly double the revenue of #2, indicating uneven seller performance distribution.
+- **High-value vs high-volume:** Health & beauty leads in revenue despite fewer orders than bed & bath — product price matters more than order count.
+- **Black Friday effect:** November 2017 shows a clear revenue spike, confirming seasonal demand patterns in Brazilian e-commerce.
+- **Delivery and satisfaction link:** 8.1% of orders were delivered late — likely the primary driver of 1-star reviews (11.5% of all reviews).
+- **Seller concentration:** The top seller generated nearly double the revenue of #2, indicating uneven seller performance distribution.
 
 ---
 
@@ -62,6 +62,6 @@ Size: 99,441 customers, 100,000+ orders, 2016–2018
 
 ## Author
 
-Mohammad Maasir Quamar
+Mohammad Maasir  
 BTech Computer Science — All Saints' College of Technology, Bhopal  
 [GitHub](https://github.com/Mohammadmaasir)
