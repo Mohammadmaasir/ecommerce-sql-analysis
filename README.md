@@ -54,7 +54,7 @@ ecommerce-sql-analysis/
 - Credit card dominates at 78.3% of total revenue
 - Boleto second at 17.9%
 
-![Payment Methods](ecommerce-sql-analysisquery4_payment_methods.png)
+![Payment Methods](ecommerce-sql-analysis/query4_payment_methods.png)
 
 ### Query 5 - Monthly Revenue Trend
 - November 2017 was peak revenue month driven by Black Friday
