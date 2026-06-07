@@ -16,10 +16,7 @@ revenue trends, and delivery performance insights.
 | Matplotlib | Data visualisation and charts |
 | GitHub | Version control and portfolio |
 
----
-
-## Project Structure
-
+```
 ecommerce-sql-analysis/
 ├── analysis_queries.sql   - All 10 SQL queries
 ├── Day1.py                - Pandas basics (load, explore, describe)
@@ -28,8 +25,7 @@ ecommerce-sql-analysis/
 ├── Day4.py                - Full analysis replicating all 10 queries
 ├── charts/                - All generated chart images
 └── README.md
-
----
+```
 
 ## Dataset
 
