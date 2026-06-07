@@ -120,5 +120,5 @@ Python:
 
 ## Author
 
-Mohammad Maasir Quamar
+Mohammad Maasir Quamar |
 BTech Computer Science | All Saints' College of Technology, Bhopal
