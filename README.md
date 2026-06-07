@@ -45,7 +45,7 @@ ecommerce-sql-analysis/
 - Sao Paulo leads with 14,984 customers
 - Rio de Janeiro second at 6,620
 
-![Top 10 Cities](charts/query2_top_cities.png)
+![Top 10 Cities](ecommerce-sql-analysis/charts/query2_top_cities.png)
 
 ### Query 3 - Total Revenue
 - Total platform revenue: R$ 16,008,872.12
@@ -54,43 +54,43 @@ ecommerce-sql-analysis/
 - Credit card dominates at 78.3% of total revenue
 - Boleto second at 17.9%
 
-![Payment Methods](charts/query4_payment_methods.png)
+![Payment Methods](ecommerce-sql-analysis/charts/query4_payment_methods.png)
 
 ### Query 5 - Monthly Revenue Trend
 - November 2017 was peak revenue month driven by Black Friday
 - Clear upward growth trend from 2016 to late 2017
 
-![Monthly Revenue Trend](charts/query5_monthly_revenue.png)
+![Monthly Revenue Trend](ecommerce-sql-analysis/charts/query5_monthly_revenue.png)
 
 ### Query 6 - Top Product Categories
 - Health and Beauty is the number 1 revenue category at R$ 1,258,681
 - Watches and Gifts second at R$ 1,205,005
 
-![Top Categories](charts/query6_top_categories.png)
+![Top Categories](ecommerce-sql-analysis/charts/query6_top_categories.png)
 
 ### Query 7 - Average Delivery Time
 - Average delivery time: 12.1 days
 - Majority of orders delivered within 20 days
 
-![Delivery Time](charts/query7_delivery_time.png)
+![Delivery Time](ecommerce-sql-analysis/charts/query7_delivery_time.png)
 
 ### Query 8 - Top Sellers by Revenue
 - Top seller generated R$ 229,472 in revenue
 - Clear concentration of revenue among top 3 sellers
 
-![Top Sellers](charts/query8_top_sellers.png)
+![Top Sellers](ecommerce-sql-analysis/charts/query8_top_sellers.png)
 
 ### Query 9 - Review Score Distribution
 - 57.8% of customers gave a 5-star review
 - Strong overall customer satisfaction
 
-![Review Scores](charts/query9_review_scores.png)
+![Review Scores](ecommerce-sql-analysis/charts/query9_review_scores.png)
 
 ### Query 10 - On-Time Delivery Rate
 - 91.9% of orders delivered on time
 - Only 8.1% delivered late
 
-![On-Time Delivery](charts/query10_ontime_delivery.png)
+![On-Time Delivery](ecommerce-sql-analysis/charts/query10_ontime_delivery.png)
 
 ---
 
