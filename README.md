@@ -14,6 +14,7 @@ revenue trends, and delivery performance insights.
 | Python | Data analysis and automation |
 | Pandas | Data manipulation and aggregation |
 | Matplotlib | Data visualisation and charts |
+| Power BI | Interactive dashboard and data visualisation |
 | GitHub | Version control and portfolio |
 
 ```
@@ -24,6 +25,7 @@ ecommerce-sql-analysis/
 ├── Day3.py                - Matplotlib charts (bar, pie, line)
 ├── Day4.py                - Full analysis replicating all 10 queries
 ├── charts/                - All generated chart images
+├── E-Commerce-Dashboard.pdf   - Power BI dashboard export
 └── README.md
 ```
 
@@ -115,6 +117,18 @@ Python:
 1. Install dependencies: pip install pandas matplotlib
 2. Update CSV file paths in each Day file to match your local directory
 3. Run in order: Day1.py then Day2.py then Day3.py then Day4.py
+
+## Dashboard
+
+A 4-page interactive Power BI dashboard was built from this dataset.
+
+Pages:
+1. Overview - Total Revenue (R$ 16M), Total Customers (96K), Total Orders (99K)
+2. Sales Analysis - Top 10 cities, payment methods, monthly revenue trend
+3. Product Analysis - Top 10 categories, top 10 sellers by revenue
+4. Delivery Analysis - Average delivery time (12.5 days), on-time rate (91.89%)
+
+Dashboard file: E-Commerce-Dashboard.pdf
 
 ---
 
