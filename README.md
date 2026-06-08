@@ -105,6 +105,15 @@ ecommerce-sql-analysis/
 5. 91.9% on-time delivery shows strong logistics performance - a key competitive advantage
 6. Python analysis revealed 96,096 true unique customers vs 99,441 SQL count - demonstrating importance of data quality checks
 
+## Machine Learning Model
+
+Built a Late Delivery Predictor using Decision Tree Classifier.
+
+- Model: Decision Tree (max_depth=7)
+- Accuracy: 68.29%
+- Key finding: Purchase month is the strongest predictor of late delivery
+- Features used: estimated_days, freight_value, payment_value, item_count, avg_price, purchase_month, purchase_dayofweek
+
 ---
 
 ## How to Run
